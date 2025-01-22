@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public class ServicoClima
 {
-    private readonly string chaveApi = "SUA_API_KEY"; // Substitua pela sua chave da OpenWeatherMap
+    private readonly string chaveApi = "cee07347eaaca46bb735c61c6ab507d6";
     private readonly string urlBase = "https://api.openweathermap.org/data/2.5/weather";
 
     public async Task<ModeloClima?> ObterClimaAsync(string cidade)
@@ -13,6 +13,7 @@ public class ServicoClima
         using var cliente = new HttpClient();
         try
         {
+            // Construindo URL com a cidade fornecida
             string url = $"{urlBase}?q={cidade}&appid={chaveApi}&units=metric";
             var resposta = await cliente.GetAsync(url);
 
@@ -20,6 +21,10 @@ public class ServicoClima
             {
                 var json = await resposta.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<ModeloClima>(json);
+            }
+            else
+            {
+                Console.WriteLine($"Erro na resposta da API: {resposta.StatusCode}");
             }
         }
         catch (Exception ex)

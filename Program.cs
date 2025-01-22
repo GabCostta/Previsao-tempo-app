@@ -7,7 +7,13 @@ class Program
     {
         Console.WriteLine("Bem-vindo ao Aplicativo de Previsão do Tempo!");
         Console.Write("Digite o nome da cidade: ");
-        string cidade = Console.ReadLine();
+        string? cidade = Console.ReadLine();
+
+        if (string.IsNullOrEmpty(cidade))
+        {
+            Console.WriteLine("O nome da cidade não pode estar vazio.");
+            return;
+        }
 
         var servicoClima = new ServicoClima();
         var clima = await servicoClima.ObterClimaAsync(cidade);
@@ -15,9 +21,9 @@ class Program
         if (clima != null)
         {
             Console.WriteLine($"\nClima em {cidade}:");
-            Console.WriteLine($"Temperatura: {clima.Principal.Temperatura}°C");
-            Console.WriteLine($"Condição: {clima.Condicoes[0].Descricao}");
-            Console.WriteLine($"Umidade: {clima.Principal.Umidade}%");
+            Console.WriteLine($"Temperatura: {clima.Main.Temp}°C");
+            Console.WriteLine($"Condição: {clima.Weather[0].Description}");
+            Console.WriteLine($"Umidade: {clima.Main.Humidity}%");
         }
         else
         {
