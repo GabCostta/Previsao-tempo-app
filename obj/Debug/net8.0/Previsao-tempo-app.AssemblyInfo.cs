@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Previsao-tempo-app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf0d1ca38b74e9bb4b93b26c7456f4e2c3d1923e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b25d5a4f9e1f80372404df7d405b2f90285efadc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Previsao-tempo-app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Previsao-tempo-app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

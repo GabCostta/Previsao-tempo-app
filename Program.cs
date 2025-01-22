@@ -22,12 +22,32 @@ class Program
         {
             Console.WriteLine($"\nClima em {cidade}:");
             Console.WriteLine($"Temperatura: {clima.Main.Temp}°C");
-            Console.WriteLine($"Condição: {clima.Weather[0].Description}");
+            Console.WriteLine($"Condição: {TraduzirCondicao(clima.Weather[0].Description)}");
             Console.WriteLine($"Umidade: {clima.Main.Humidity}%");
         }
         else
         {
             Console.WriteLine("Não foi possível obter a previsão do tempo. Verifique a cidade ou a conexão.");
         }
+    }
+
+    static string TraduzirCondicao(string descricao)
+    {
+        // Dicionário de traduções
+        var traducoes = new Dictionary<string, string>
+        {
+            { "clear sky", "céu limpo" },
+            { "few clouds", "poucas nuvens" },
+            { "scattered clouds", "nuvens dispersas" },
+            { "broken clouds", "nuvens quebradas" },
+            { "shower rain", "chuva fraca" },
+            { "rain", "chuva" },
+            { "thunderstorm", "trovoada" },
+            { "snow", "neve" },
+            { "mist", "névoa" }
+        };
+
+        // Retorna a tradução ou o texto original caso não haja tradução
+        return traducoes.ContainsKey(descricao) ? traducoes[descricao] : descricao;
     }
 }
