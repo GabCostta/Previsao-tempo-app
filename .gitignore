@@ -1,0 +1,13 @@
+# Ignorar arquivos e diretórios gerados
+bin/
+obj/
+*.pdb
+
+# Ignorar o arquivo .env
+.env
+
+# Ignorar arquivos temporários e de sistema
+*.log
+*.tmp
+.vscode/
+.idea/

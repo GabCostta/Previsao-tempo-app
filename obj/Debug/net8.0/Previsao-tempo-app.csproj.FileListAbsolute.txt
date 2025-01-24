@@ -16,3 +16,8 @@
 /workspaces/Previsao-tempo-app/obj/Debug/net8.0/Previsao-tempo-app.pdb
 /workspaces/Previsao-tempo-app/obj/Debug/net8.0/Previsao-tempo-app.genruntimeconfig.cache
 /workspaces/Previsao-tempo-app/obj/Debug/net8.0/ref/Previsao-tempo-app.dll
+/workspaces/Previsao-tempo-app/bin/Debug/net8.0/DotNetEnv.dll
+/workspaces/Previsao-tempo-app/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll
+/workspaces/Previsao-tempo-app/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/workspaces/Previsao-tempo-app/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/workspaces/Previsao-tempo-app/bin/Debug/net8.0/Sprache.dll

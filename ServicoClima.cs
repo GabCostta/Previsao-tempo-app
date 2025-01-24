@@ -2,11 +2,19 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using DotNetEnv; // Para carregar variáveis de ambiente
 
 public class ServicoClima
 {
-    private readonly string chaveApi = "cee07347eaaca46bb735c61c6ab507d6";
     private readonly string urlBase = "https://api.openweathermap.org/data/2.5/weather";
+    private readonly string chaveApi;
+
+    public ServicoClima()
+    {
+        // Carregando as variáveis de ambiente do arquivo .env
+        DotNetEnv.Env.Load();
+        chaveApi = Environment.GetEnvironmentVariable("API_KEY") ?? throw new InvalidOperationException("Chave de API não encontrada no arquivo .env");
+    }
 
     public async Task<ModeloClima?> ObterClimaAsync(string cidade)
     {

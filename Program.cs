@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-class Program
+﻿class Program
 {
     static async Task Main(string[] args)
     {
@@ -33,7 +30,6 @@ class Program
 
     static string TraduzirCondicao(string descricao)
     {
-        // Dicionário de traduções
         var traducoes = new Dictionary<string, string>
         {
             { "clear sky", "céu limpo" },
@@ -44,7 +40,9 @@ class Program
             { "rain", "chuva" },
             { "thunderstorm", "trovoada" },
             { "snow", "neve" },
-            { "mist", "névoa" }
+            { "mist", "névoa" },
+            { "overcast clouds", "nublado" },
+            { "moderate rain", "chuva moderada" }
         };
 
         // Retorna a tradução ou o texto original caso não haja tradução
